@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">DofusOrganizer</string>
+    <string name="action_settings">Settings</string>
+    <string name="chars">Characters</string>
+    <string name="guild_search">Search by Guild</string>
+    <string name="harvest">Eternal Harvest Tracking</string>
+    <string name="market">Marketplace Tracking</string>
+    <string name="title_activity_display_characters">Characters</string>
+    <string name="title_activity_harvest_tracker">Eternal Harvest Tracker</string>
+    <string name="title_activity_character_search">CharacterSearch</string>
+</resources>
