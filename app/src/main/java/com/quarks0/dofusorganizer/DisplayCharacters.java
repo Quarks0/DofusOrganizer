@@ -43,7 +43,7 @@ public class DisplayCharacters extends AppCompatActivity {
     public void charSearch(View view){
         //Looks up guild
         EditText guildName = (EditText)findViewById(R.id.guildName);
-        String guildQuery = guildName.getText().toString().replaceAll(" ","+");
+        String guildQuery = "http://www.dofus.com/en/mmorpg/community/directories/guild-pages?TEXT="+guildName.getText().toString().replaceAll(" ","+")+"&guild_level_min=1&guild_level_max=200&=#jt_list";
 
 //        URL guildSearch = null;
 //        HttpURLConnection urlConnection = null;
@@ -73,13 +73,13 @@ public class DisplayCharacters extends AppCompatActivity {
         startActivity(CharSearch);
     }
 
-    private String readStream(InputStream is) throws IOException {
-        StringBuilder sb = new StringBuilder();
-        BufferedReader r = new BufferedReader(new InputStreamReader(is),1000);
-        for (String line = r.readLine(); line != null; line =r.readLine()){
-            sb.append(line);
-        }
-        is.close();
-        return sb.toString();
-    }
+//    private String readStream(InputStream is) throws IOException {
+//        StringBuilder sb = new StringBuilder();
+//        BufferedReader r = new BufferedReader(new InputStreamReader(is),1000);
+//        for (String line = r.readLine(); line != null; line =r.readLine()){
+//            sb.append(line);
+//        }
+//        is.close();
+//        return sb.toString();
+//    }
 }
