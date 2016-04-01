@@ -10,11 +10,7 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 
-/**
- * Created by Quarks0 on 3/28/2016.
- */
 public class ExpandableListAdapter extends BaseExpandableListAdapter{
 
     private Context context;
@@ -39,16 +35,16 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter{
     }
 
     @Override
-    public View getChildView(int groupPosition, final int childPosition, boolean isLastChild, View convertView, ViewGroup parent){
+    public View getChildView(int groupPosition, final int childPosition, boolean isLastChild, View view, ViewGroup parent){
         final String childText = (String) getChild(groupPosition, childPosition);
 
-        if (convertView == null){
+        if (view == null){
             LayoutInflater infalInflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = infalInflater.inflate(R.layout.content_harvest_tracker,null);
+            view = infalInflater.inflate(R.layout.listitem,null);
         }
-        TextView txtListChild = (TextView) convertView.findViewById(R.id.eternalHarvestList);
+        TextView txtListChild = (TextView) view.findViewById(R.id.expListChild);
         txtListChild.setText(childText);
-        return convertView;
+        return view;
     }
 
     @Override
@@ -77,10 +73,10 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter{
 
         if(view == null){
             LayoutInflater infalInflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = infalInflater.inflate(R.layout.content_harvest_tracker,null);
+            view = infalInflater.inflate(R.layout.listgroup,null);
         }
 
-        TextView labelListHeader = (TextView) view.findViewById(R.id.eternalHarvestList);
+        TextView labelListHeader = (TextView) view.findViewById(R.id.expListHeader);
         labelListHeader.setTypeface(null, Typeface.BOLD);
         labelListHeader.setText(headerTitle);
 
