@@ -1,13 +1,16 @@
 package com.quarks0.dofusorganizer;
 
-import android.database.DataSetObserver;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.ExpandableListView.OnChildClickListener;
+import android.widget.ExpandableListView.OnGroupClickListener;
+import android.widget.ExpandableListView.OnGroupCollapseListener;
+import android.widget.ExpandableListView.OnGroupExpandListener;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,7 +29,29 @@ public class HarvestTracker extends AppCompatActivity {
         setContentView(R.layout.activity_harvest_tracker);
         eHListView = (ExpandableListView) findViewById(R.id.eternalHarvestList);
         initiateList();
-        eHList = new ExpandableListAdapter();
+        eHList = new ExpandableListAdapter(this, listHeader,listChild);
+        eHListView.setAdapter(eHList);
+
+        eHListView.setOnGroupClickListener(new OnGroupClickListener() {
+            @Override
+            public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
+                return false;
+            }
+        });
+
+        eHListView.setOnGroupCollapseListener(new OnGroupCollapseListener() {
+            @Override
+            public void onGroupCollapse(int groupPosition) {
+                Toast.makeText(getApplicationContext(), listHeader.get(groupPosition) + " collapsed", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        eHListView.setOnChildClickListener(new OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+                return false;
+            }
+        });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -63,6 +88,8 @@ public class HarvestTracker extends AppCompatActivity {
         step1.add("Crab");
         step1.add("Pink Piwi");
         step1.add("Tofu");
+        int step1counter = 0;
+        int step1max = step1.size();
 
         List<String> step2 = new ArrayList<String>();
         step1.add("Grey Mouse");
@@ -85,6 +112,8 @@ public class HarvestTracker extends AppCompatActivity {
         step1.add("Crab");
         step1.add("Pink Piwi");
         step1.add("Tofu");
+        int step2counter = 0;
+        int step2max = step2.size();
 
         List<String> step3 = new ArrayList<String>();
         step1.add("Kokonut");
@@ -107,6 +136,8 @@ public class HarvestTracker extends AppCompatActivity {
         step1.add("Wabbit");
         step1.add("Gobbal War Chief");
         step1.add("Lousy Pig Shepherd");
+        int step3counter = 0;
+        int step3max = step3.size();
 
         List<String> step4 = new ArrayList<String>();
         step1.add("Whitish Fang");
@@ -129,6 +160,8 @@ public class HarvestTracker extends AppCompatActivity {
         step1.add("Green Turtle");
         step1.add("Bwork Magus");
         step1.add("Furious Whitish Fang");
+        int step4counter = 0;
+        int step4max = step4.size();
 
         List<String> step5 = new ArrayList<String>();
         step1.add("Dark Rose");
@@ -150,6 +183,8 @@ public class HarvestTracker extends AppCompatActivity {
         step1.add("Bwork");
         step1.add("Treechnid");
         step1.add("Khamelrost");
+        int step5counter = 0;
+        int step5max = step5.size();
 
         List<String> step6 = new ArrayList<String>();
         step1.add("White Scaraleaf");
@@ -172,6 +207,8 @@ public class HarvestTracker extends AppCompatActivity {
         step1.add("Crocodyl");
         step1.add("Sick Grossewer Rat");
         step1.add("Scurvion");
+        int step6counter = 0;
+        int step6max = step6.size();
 
         List<String> step7 = new ArrayList<String>();
         step1.add("Wild Ginger Dragoturkey");
@@ -194,6 +231,8 @@ public class HarvestTracker extends AppCompatActivity {
         step1.add("Let Emoliug");
         step1.add("Nebgib");
         step1.add("Nipul");
+        int step7counter = 0;
+        int step7max = step7.size();
 
         List<String> step8 = new ArrayList<String>();
         step1.add("Osurc");
@@ -216,6 +255,8 @@ public class HarvestTracker extends AppCompatActivity {
         step1.add("Plain Crackler");
         step1.add("Pandit");
         step1.add("Elite Chafter");
+        int step8counter = 0;
+        int step8max = step8.size();
 
         List<String> step9 = new ArrayList<String>();
         step1.add("Fungi Master");
@@ -238,6 +279,8 @@ public class HarvestTracker extends AppCompatActivity {
         step1.add("Black Dragoss");
         step1.add("Sapphire Dragoss");
         step1.add("Leopardo");
+        int step9counter = 0;
+        int step9max = step9.size();
 
         List<String> step10 = new ArrayList<String>();
         step1.add("Quetsnakiatl");
@@ -260,6 +303,8 @@ public class HarvestTracker extends AppCompatActivity {
         step1.add("Pippin Koalak");
         step1.add("Hyoactive Rat");
         step1.add("Sparo");
+        int step10counter = 0;
+        int step10max = step10.size();
 
         List<String> step11 = new ArrayList<String>();
         step1.add("Warguerite");
@@ -282,6 +327,8 @@ public class HarvestTracker extends AppCompatActivity {
         step1.add("Kido");
         step1.add("Kilibriss");
         step1.add("Alert White Dreggon");
+        int step11counter = 0;
+        int step11max = step11.size();
 
         List<String> step12 = new ArrayList<String>();
         step1.add("Alert Golden Dreggon");
@@ -304,6 +351,8 @@ public class HarvestTracker extends AppCompatActivity {
         step1.add("Wild Golden Dragoturkey");
         step1.add("Koalak Rider");
         step1.add("Moopet");
+        int step12counter = 0;
+        int step12max = step12.size();
 
         List<String> step13 = new ArrayList<String>();
         step1.add("Holy Bambooto");
@@ -326,6 +375,8 @@ public class HarvestTracker extends AppCompatActivity {
         step1.add("Purple Warko");
         step1.add("Zoth Girl");
         step1.add("Zoth Warrior");
+        int step13counter = 0;
+        int step13max = step13.size();
 
         List<String> step14 = new ArrayList<String>();
         step1.add("Mopeat");
@@ -346,6 +397,8 @@ public class HarvestTracker extends AppCompatActivity {
         step1.add("Aerogoburius the Malicious");
         step1.add("Aqualikros the Merciless");
         step1.add("Trool");
+        int step14counter = 0;
+        int step14max = step14.size();
 
         List<String> step15 = new ArrayList<String>();
         step1.add(" Zoth Sergeant");
@@ -368,10 +421,14 @@ public class HarvestTracker extends AppCompatActivity {
         step1.add("Mopy King");
         step1.add("Maho Firefoux Ghost");
         step1.add("Yokai Firefoux Ghost");
+        int step15counter = 0;
+        int step15max = step15.size();
 
         List<String> step16 = new ArrayList<String>();
         step1.add("Pandora Ghost");
         step1.add("Tanukouï San Ghost");
+        int step16counter = 0;
+        int step16max = step16.size();
 
         List<String> step17 = new ArrayList<String>();
         step1.add("Sponge Mob");
@@ -394,6 +451,8 @@ public class HarvestTracker extends AppCompatActivity {
         step1.add("Black Rat");
         step1.add("White Rat");
         step1.add("Minotoror");
+        int step17counter = 0;
+        int step17max = step17.size();
 
         List<String> step18 = new ArrayList<String>();
         step1.add("Hell Mina");
@@ -416,8 +475,10 @@ public class HarvestTracker extends AppCompatActivity {
         step1.add("Dismayed Tynril");
         step1.add("Disconcerted Tynril");
         step1.add("Perfidious Tynril");
+        int step18counter = 0;
+        int step18max = step18.size();
 
-//        List<String> step18 = new ArrayList<String>();
+//        List<String> step19 = new ArrayList<String>();
 //        step1.add("");
 //        step1.add("");
 //        step1.add("");
@@ -438,8 +499,10 @@ public class HarvestTracker extends AppCompatActivity {
 //        step1.add("");
 //        step1.add("");
 //        step1.add("");
+//        int step19counter = 0;
+//        int step19max = step19.size();
 
-//        List<String> step18 = new ArrayList<String>();
+//       List<String> step20 = new ArrayList<String>();
 //        step1.add("");
 //        step1.add("");
 //        step1.add("");
@@ -460,8 +523,10 @@ public class HarvestTracker extends AppCompatActivity {
 //        step1.add("");
 //        step1.add("");
 //        step1.add("");
-//
-//       List<String> step18 = new ArrayList<String>();
+//        int step20counter = 0;
+//        int step20max = step20.size();
+
+//       List<String> step21 = new ArrayList<String>();
 //        step1.add("");
 //        step1.add("");
 //        step1.add("");
@@ -482,8 +547,10 @@ public class HarvestTracker extends AppCompatActivity {
 //        step1.add("");
 //        step1.add("");
 //        step1.add("");
-//
-//       List<String> step18 = new ArrayList<String>();
+//        int step21counter = 0;
+//        int step21max = step21.size();
+
+//       List<String> step22 = new ArrayList<String>();
 //        step1.add("");
 //        step1.add("");
 //        step1.add("");
@@ -504,8 +571,10 @@ public class HarvestTracker extends AppCompatActivity {
 //        step1.add("");
 //        step1.add("");
 //        step1.add("");
-//
-//       List<String> step18 = new ArrayList<String>();
+//        int step22counter = 0;
+//        int step22max = step22.size();
+
+        //       List<String> step23 = new ArrayList<String>();
 //        step1.add("");
 //        step1.add("");
 //        step1.add("");
@@ -526,8 +595,10 @@ public class HarvestTracker extends AppCompatActivity {
 //        step1.add("");
 //        step1.add("");
 //        step1.add("");
-//
-//       List<String> step18 = new ArrayList<String>();
+//        int step23counter = 0;
+//        int step23max = step23.size();
+
+        //       List<String> step24 = new ArrayList<String>();
 //        step1.add("");
 //        step1.add("");
 //        step1.add("");
@@ -548,8 +619,10 @@ public class HarvestTracker extends AppCompatActivity {
 //        step1.add("");
 //        step1.add("");
 //        step1.add("");
-//
-//       List<String> step18 = new ArrayList<String>();
+//        int step24counter = 0;
+//        int step24max = step24.size();
+
+        //       List<String> step25 = new ArrayList<String>();
 //        step1.add("");
 //        step1.add("");
 //        step1.add("");
@@ -570,6 +643,248 @@ public class HarvestTracker extends AppCompatActivity {
 //        step1.add("");
 //        step1.add("");
 //        step1.add("");
+//        int step25counter = 0;
+//        int step25max = step25.size();
+
+        //       List<String> step26 = new ArrayList<String>();
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        int step26counter = 0;
+//        int step26max = step26.size();
+
+        //       List<String> step27 = new ArrayList<String>();
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        int step27counter = 0;
+//        int step27max = step27.size();
+
+        //       List<String> step28 = new ArrayList<String>();
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        int step28counter = 0;
+//        int step28max = step28.size();
+
+        //       List<String> step29 = new ArrayList<String>();
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        int step29counter = 0;
+//        int step29max = step29.size();
+
+        //       List<String> step30 = new ArrayList<String>();
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        int step30counter = 0;
+//        int step30max = step30.size();
+
+        //       List<String> step31 = new ArrayList<String>();
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        int step31counter = 0;
+//        int step31max = step3.size();
+
+        //       List<String> step32 = new ArrayList<String>();
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        int step32counter = 0;
+//        int step32max = step32.size();
+
+        //       List<String> step33 = new ArrayList<String>();
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        int step33counter = 0;
+//        int step33max = step33.size();
+
+        //       List<String> step34 = new ArrayList<String>();
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        int step34counter = 0;
+//        int step34max = step34.size();
+
+        //       List<String> step35 = new ArrayList<String>();
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        step1.add("");
+//        int step35counter = 0;
+//        int step35max = step35.size();
 
         //Hooboy, now put them together
         listChild.put(listHeader.get(0),step1);
