@@ -24,13 +24,13 @@
             android:label="@string/title_activity_display_characters"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".harvestTracker"
+            android:name=".HarvestTracker"
             android:label="@string/title_activity_harvest_tracker"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CharacterSearch"
             android:label="@string/title_activity_character_search"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

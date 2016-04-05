@@ -39,8 +39,8 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter{
         final String childText = (String) getChild(groupPosition, childPosition);
 
         if (view == null){
-            LayoutInflater infalInflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = infalInflater.inflate(R.layout.listitem,null);
+            LayoutInflater layInflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = layInflater.inflate(R.layout.listitem,null);
         }
         TextView txtListChild = (TextView) view.findViewById(R.id.expListChild);
         txtListChild.setText(childText);
@@ -72,8 +72,8 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter{
         String headerTitle = (String) getGroup(groupPosition);
 
         if(view == null){
-            LayoutInflater infalInflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = infalInflater.inflate(R.layout.listgroup,null);
+            LayoutInflater layInflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = layInflater.inflate(R.layout.listgroup,null);
         }
 
         TextView labelListHeader = (TextView) view.findViewById(R.id.expListHeader);

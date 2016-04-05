@@ -18,7 +18,7 @@ import java.util.List;
 
 public class HarvestTracker extends AppCompatActivity {
 
-    ExpandableListAdapter eHList;
+    ExpandableListAdapter eHListAdapter;
     ExpandableListView eHListView;
     List<String> listHeader;
     HashMap<String,List<String>> listChild;
@@ -29,8 +29,8 @@ public class HarvestTracker extends AppCompatActivity {
         setContentView(R.layout.activity_harvest_tracker);
         eHListView = (ExpandableListView) findViewById(R.id.eternalHarvestList);
         initiateList();
-        eHList = new ExpandableListAdapter(this, listHeader,listChild);
-        eHListView.setAdapter(eHList);
+        eHListAdapter = new ExpandableListAdapter(this, listHeader,listChild);
+        eHListView.setAdapter(eHListAdapter);
 
         eHListView.setOnGroupClickListener(new OnGroupClickListener() {
             @Override

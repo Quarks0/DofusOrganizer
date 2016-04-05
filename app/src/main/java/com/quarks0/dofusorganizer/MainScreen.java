@@ -47,9 +47,16 @@ public class MainScreen extends AppCompatActivity {
         startActivity(intent);
     }
     public void harvestTracker(View view) {
-        //Intent intent = new Intent(this,HarvestTracker.class);
+        Intent intent = new Intent(this,HarvestTracker.class);
+        startActivity(intent);
     }
     public void marketTracker(View view) {
         //Intent intent = new Intent(this,MarketTracker.class);
+        //startActivity(intent);
+    }
+
+    public void petTracker(View view) {
+        //Intent intent = new Intent(this, PetTracker.class);
+        //startActivity(intent);
     }
 }
