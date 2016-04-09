@@ -15,9 +15,9 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter{
 
     private Context context;
     private List<String> listHeader;
-    private HashMap<String, List<String>> listChild;
+    private HashMap<String, List<ListItem>> listChild;
 
-    public ExpandableListAdapter(Context _context, List<String> _listHeader, HashMap<String,List<String>> _listChild){
+    public ExpandableListAdapter(Context _context, List<String> _listHeader, HashMap<String,List<ListItem>> _listChild){
         this.context = _context;
         this.listHeader = _listHeader;
         this.listChild = _listChild;
@@ -35,16 +35,16 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter{
     }
 
     @Override
-    public View getChildView(int groupPosition, final int childPosition, boolean isLastChild, View view, ViewGroup parent){
+    public View getChildView(int groupPosition, final int childPosition, boolean isLastChild, View convertView, ViewGroup parent){
         final String childText = (String) getChild(groupPosition, childPosition);
 
-        if (view == null){
+        if (convertView == null){
             LayoutInflater layInflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = layInflater.inflate(R.layout.listitem,null);
+            convertView = layInflater.inflate(R.layout.listitem,null);
         }
-        TextView txtListChild = (TextView) view.findViewById(R.id.expListChild);
+        TextView txtListChild = (TextView) convertView.findViewById(R.id.expListChild);
         txtListChild.setText(childText);
-        return view;
+        return convertView;
     }
 
     @Override
