@@ -1,6 +1,7 @@
 package com.quarks0.dofusorganizer;
 
 import android.graphics.Typeface;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,10 +38,13 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter{
     @Override
     public View getChildView(int groupPosition, final int childPosition, boolean isLastChild, View convertView, ViewGroup parent){
         final String childText = (String) getChild(groupPosition, childPosition);
+        final ViewHolder viewHolder;
 
         if (convertView == null){
             LayoutInflater layInflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layInflater.inflate(R.layout.listitem,null);
+
+            viewHolder = new ViewHolder();
         }
         TextView txtListChild = (TextView) convertView.findViewById(R.id.expListChild);
         txtListChild.setText(childText);

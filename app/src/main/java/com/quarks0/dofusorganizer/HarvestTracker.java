@@ -50,14 +50,19 @@ public class HarvestTracker extends AppCompatActivity {
         eHListView.setOnChildClickListener(new OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                ColorDrawable bgColor = (ColorDrawable) v.getBackground();
-                int bgColorint = bgColor.getColor();
-                if (bgColorint == Color.parseColor("#FFFFFF")) {
-                    v.setBackgroundColor(Color.parseColor("#41A317"));
-                    Toast.makeText(getApplicationContext(), "Get!", Toast.LENGTH_SHORT).show();
-                } else {
-                    v.setBackgroundColor(Color.parseColor("#FFFFFF"));
-                }
+                ListItem tempItem = (ListItem) eHListAdapter.getChild(groupPosition,childPosition);
+                boolean toggleresult = tempItem.itemToggle();
+
+                eHListAdapter.notifyDataSetChanged();
+
+                //                ColorDrawable bgColor = (ColorDrawable) v.getBackground();
+//                int bgColorint = bgColor.getColor();
+//                if (bgColorint == Color.parseColor("#FFFFFF")) {
+//                    v.setBackgroundColor(Color.parseColor("#41A317"));
+//                    Toast.makeText(getApplicationContext(), "Get!", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    v.setBackgroundColor(Color.parseColor("#FFFFFF"));
+//                }
 
                 return true;
             }

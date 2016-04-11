@@ -20,8 +20,9 @@ public class ListItem{
         return isToggled;
     }
 
-    public void itemToggle(){
+    public boolean itemToggle(){
         isToggled = !isToggled;
+        return isToggled;
     }
 
     public int counterValue(){
