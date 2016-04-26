@@ -3,7 +3,7 @@ package com.quarks0.dofusorganizer;
 /**
  * Created by Quarks0 on 4/8/2016.
  */
-public class ListItem{
+public class ListItem implements java.io.Serializable{
     public String value;
     public boolean isToggled = false;
     public int counter = 0;

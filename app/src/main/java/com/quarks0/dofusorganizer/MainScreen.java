@@ -1,14 +1,13 @@
 package com.quarks0.dofusorganizer;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
+import android.widget.Toast;
 
 public class MainScreen extends AppCompatActivity {
 
@@ -42,21 +41,38 @@ public class MainScreen extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //Brings you to Character View
     public void viewCharacters(View view) {
         Intent intent = new Intent(this,DisplayCharacters.class);
         startActivity(intent);
+
+        Toast.makeText(getApplicationContext(), "Coming soon", Toast.LENGTH_SHORT).show();
     }
+
+    //Brings you to Eternal Harvest tracking
     public void harvestTracker(View view) {
         Intent intent = new Intent(this,HarvestTracker.class);
         startActivity(intent);
     }
+
+    //Debatable marketplace tracking
     public void marketTracker(View view) {
         //Intent intent = new Intent(this,MarketTracker.class);
         //startActivity(intent);
+        Toast.makeText(getApplicationContext(), "Coming soon", Toast.LENGTH_SHORT).show();
     }
 
+    //Brings you to pet feeding timers
     public void petTracker(View view) {
         //Intent intent = new Intent(this, PetTracker.class);
         //startActivity(intent);
+        Toast.makeText(getApplicationContext(), "Coming soon", Toast.LENGTH_SHORT).show();
+    }
+
+    //Brings you to Almanax Calendar
+    public void almanaxCalendar(View view){
+        //Intent intent = new Intent(this, almanaxCalendar.class);
+        //startActivity(intent);
+        Toast.makeText(getApplicationContext(), "Coming soon", Toast.LENGTH_SHORT).show();
     }
 }

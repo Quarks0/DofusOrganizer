@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.quarks0.dofusorganizer.harvestTracker">
+    tools:context="com.quarks0.dofusorganizer.HarvestTracker">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
