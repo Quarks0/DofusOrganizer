@@ -14,7 +14,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-
+/** Largely taken from somewhere else but I forget source
+ */
 //Implementation of a Nested List
 public class ExpandableListAdapter extends BaseExpandableListAdapter{
 

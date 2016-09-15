@@ -5,7 +5,45 @@
     <string name="guild_search">Search by Guild</string>
     <string name="harvest">Eternal Harvest Tracking</string>
     <string name="market">Marketplace Tracking</string>
+    <string name="pet">Pet Feed Tracking</string>
     <string name="title_activity_display_characters">Characters</string>
     <string name="title_activity_harvest_tracker">Eternal Harvest Tracker</string>
     <string name="title_activity_character_search">CharacterSearch</string>
+    <string name="selectpet">Select pet</string>
+    <string name="addpet">Add pet</string>
+    <string-array name="pet_array">
+        <item>Angora Bow Meow</item>
+        <item>Atooin</item>
+        <item>Bilby</item>
+        <item>Bloody Koalak</item>
+        <item>Bow Meow</item>
+        <item>Bwak</item>
+        <item>Bworky</item>
+        <item>Crocodyl</item>
+        <item>Cromagmunk</item>
+        <item>Cromigmite</item>
+        <item>Croum</item>
+        <item>Feanor</item>
+        <item>Ghast</item>
+        <item>Jellifrost</item>
+        <item>Kerubaby</item>
+        <item>Leopardo</item>
+        <item>Little Black Bow Wow</item>
+        <item>Little White Bow Meow</item>
+        <item>Mini Wa</item>
+        <item>Minimino</item>
+        <item>Mischievous Squirrel</item>
+        <item>Nomoon</item>
+        <item>Pandawa Cub</item>
+        <item>Peki Peki</item>
+        <item>Pingoku</item>
+        <item>Pink Dragoone</item>
+        <item>Piwin</item>
+        <item>Platypus</item>
+        <item>Ross</item>
+        <item>Snowfoux</item>
+        <item>Tabby Bow Meow</item>
+        <item>Wabbit</item>
+        <item>Willy Peninzias</item>
+    </string-array>
 </resources>
