@@ -70,7 +70,7 @@ public class PetTracker extends AppCompatActivity{
 
 
     private List<String> pullFromCSV(){
-        InputStream inputStream = getResources().openRawResource(R.raw.DofusPet);
+        InputStream inputStream = getResources().openRawResource(R.raw.dofuspetlist);
         CSVFile csvFile = new CSVFile(inputStream);
 
         return csvFile.read();
